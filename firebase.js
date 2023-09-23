@@ -14,7 +14,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
     const firebaseConfig = {
       apiKey: "AIzaSyDrX9_4UkoLd7THeH7xBAQisIOOsjQrvlA",
       authDomain: "library-store-ee5a4.firebaseapp.com",
-      databaseURL: "https://library-store-ee5a4-default-rtdb.firebaseio.com",
       projectId: "library-store-ee5a4",
       storageBucket: "library-store-ee5a4.appspot.com",
       messagingSenderId: "953404911469",
