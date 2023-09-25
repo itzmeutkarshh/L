@@ -7,7 +7,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    // For Firebase JS SDK v10.4.0 
     const loginPage=document.querySelector('.login-page');
     const loginBtn=document.getElementById('login-btn');
 
@@ -20,7 +20,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
       appId: "1:953404911469:web:42d179f3d82a50433f3464"
     };
   
-    // Initialize Firebase
+   
     const app = initializeApp(firebaseConfig);
     const database= getDatabase(app);
     const auth = getAuth(app);
@@ -28,7 +28,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
     const provider2=new FacebookAuthProvider(app);
     console.log(app);
 
-    //----- New Registration code start	  
+   
 	  document.getElementById("register").addEventListener("click", function() {
 		  var email =  document.getElementById("email").value;
 		  var password = document.getElementById("password").value;
@@ -42,18 +42,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
 		    alert("Registration successfully!!");
         loginBtn.innerText="Sign Out";
 
-		    // ...
+		    
 		  })
 		  .catch((error) => {
 		    const errorCode = error.code;
 		    const errorMessage = error.message;
-		    // ..
+		   
 		    console.log(errorMessage);
 		    alert(error);
 		  });		  		  
 	  });
 	
-	  //----- Login code start	  
+		  
 	  document.getElementById("login").addEventListener("click", function() {
         
 		  var email =  document.getElementById("login_email").value;
@@ -76,7 +76,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
 		    alert(errorMessage);
 		  });		  		  
 	  });
-      //-------Google auth login-------//
+     
       document.getElementById("googleBtnIn").addEventListener('click',(e)=>{
         signInWithPopup(auth,provider)
         .then((result)=>{
@@ -99,7 +99,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
         });
       });
 
-            //-------Google auth signup-------//
+           
         document.getElementById("googleBtnUp").addEventListener('click',(e)=>{
         signInWithPopup(auth,provider)
         .then((result)=>{
@@ -122,16 +122,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebas
         });
       });
 
-      //----- Logout code start	  
-	//   document.getElementById("logout").addEventListener("click", function() {
-	// 	  signOut(auth).then(() => {
-	// 		  // Sign-out successful.
-	// 		  console.log('Sign-out successful.');
-	// 		  alert('Sign-out successful.');
-	// 		  document.getElementById('logout').style.display = 'none';
-	// 		}).catch((error) => {
-	// 		  // An error happened.
-	// 		  console.log('An error happened.');
-	// 		});		  		  
-	//   });
-	  //----- End
+     
+	document.getElementById("logout").addEventListener("click", function() {
+	 	  signOut(auth).then(() => {
+			  
+			  console.log('Sign-out successful.');
+			  alert('Sign-out successful.');
+			  document.getElementById('logout').style.display = 'none';
+			}).catch((error) => {
+	
+	 		  console.log('An error happened.');
+			});		  		  
+	  });
+	  
