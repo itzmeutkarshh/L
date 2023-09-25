@@ -35,7 +35,7 @@ var enddate="";
 var author=[];
 var s="";
 
-////////////// login woriking/////////////////
+
 loginBtn.addEventListener('click',()=>{
     if(loginBtn.textContent=="Sign Out"){
         alert("Signout Successfully");
@@ -50,7 +50,7 @@ for(let i of closeBtn){
         loginPage.classList.toggle('show-login-page');
     });
 }
-///////////////cart working/////////////////
+
 cartBtn.addEventListener('click',()=>{
     cartPage.classList.toggle('show-cart-page');
 });
@@ -89,7 +89,7 @@ function filter(){
 function searchfun(){
     container.innerHTML="";
     filteredAuthors.innerHTML=`<h3>Filter By Author</h3>`;
-    // let storeBooks=[];
+    
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${s}&publishedDate:${startdate}:${enddate}&key=${apiKey}`)
   .then(response => response.json())
   .then(data => {
@@ -126,8 +126,8 @@ function searchfun(){
 
 
 
-//////////////////////////////////////////////
-// window.onload=firebase.initializeApp(config);
+
+
 window.onload=loaditems();
 function loaditems(){
     var startIndex=Math.floor(Math.random() * 50);
@@ -157,7 +157,7 @@ function loaditems(){
         console.error(error);
     });
 }
-//////////////////////////////////////////////////////
+
 let totalAmount=0;
 function addToCart(item){
     item.children[0].textContent--;
